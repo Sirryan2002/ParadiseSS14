@@ -1,6 +1,5 @@
 using Content.Shared.Tag;
 using Robust.Shared.Audio;
-using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Paradise.PushBroom;
@@ -9,7 +8,7 @@ namespace Content.Shared._Paradise.PushBroom;
 /// Marks an item as a push broom. While wielded, it sweeps loose items off the
 /// wielder's tile into the tile ahead of them as they walk.
 /// </summary>
-[RegisterComponent, NetworkedComponent]
+[RegisterComponent]
 public sealed partial class PushBroomComponent : Component
 {
     /// <summary>

@@ -283,7 +283,6 @@ public sealed partial class PushBroomSystem : EntitySystem
 
         _audio.PlayPredicted(broom.Comp.SweepSound, broom.Owner, user.Owner);
 
-        // One message per sweep, naming whichever receptacle took the first item.
         if (depositedInto is { } receptacle)
         {
             var self = Loc.GetString("push-broom-deposit-self",
@@ -293,9 +292,6 @@ public sealed partial class PushBroomSystem : EntitySystem
                 ("user", Identity.Entity(user, EntityManager)),
                 ("receptacle", receptacle));
 
-            // Two-message overload: the sweeper gets the first string, everyone else in PVS
-            // gets the second. Popups are predicted automatically now, so PopupPredicted is
-            // deprecated and plain PopupEntity is correct even from a Shared system.
             _popup.PopupEntity(self, others, user, user);
         }
     }
