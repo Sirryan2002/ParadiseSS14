@@ -23,6 +23,21 @@
 
 - type: entity
   parent: ClothingBackpackSatchel
+  id: ClothingBackpackSatchelLizard
+  name: lizard skin handbag
+  description: A handbag made out of what appears to be supple green Unathi skin. A face can be vaguely seen on the front.
+  components:
+    - type: Sprite
+      sprite: Clothing/Back/Satchels/lizard.rsi
+    # Required: ConstructionSystem spawns the target entity, then immediately deletes it
+    # again if it has no ConstructionComponent. Without this the craft silently produces
+    # nothing after the do-after finishes.
+    - type: Construction
+      graph: LizardSkinHandBag
+      node: handbag
+
+- type: entity
+  parent: ClothingBackpackSatchel
   id: ClothingBackpackSatchelEngineering
   name: engineering satchel
   description: A tough satchel with extra pockets.

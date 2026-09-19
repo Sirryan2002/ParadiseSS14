@@ -1,0 +1,14 @@
+- type: entity
+  parent: BaseAction
+  id: UnathiIgniteAction
+  name: Ignite
+  description: A fire forms in your mouth, fierce enough to... light a cigarette. Requires you to drink welding fuel beforehand.
+  components:
+    - type: Action
+      useDelay: 20 # Paradise uses a 20 second cooldown
+    - type: Sprite
+      sprite: Objects/Tools/matches.rsi # lowercase - RSI paths are case sensitive
+      layers:
+        - state: match_unathi
+    - type: InstantAction
+      event: !type:IgniteEvent
